@@ -1,0 +1,9 @@
+name = Drupal Development Module
+description = Provides modules and tools for Drupal development
+core = 7.x
+package = devel
+dependencies[] = admin_menu
+dependencies[] = views
+dependencies[] = views_ui
+dependencies[] = module_filter
+dependencies[] = memcache

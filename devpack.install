@@ -1,0 +1,39 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Marek Kisiel - marekjkisiel@gmail.com - http://codium.pl
+ * Date: 8/7/15
+ * Time: 10:39 PM
+ */
+
+/**
+ * Implements hook_install()
+ */
+function devpack_install() {
+    module_disable(array('overlay', 'toolbar'));
+
+    if(! class_exists('Memcache')){
+        module_disable(array('memcache'));
+    }
+
+}
+
+
+/**
+ * Implements hook_enable()
+ */
+function devpack_enable() {
+    module_enable(devpack());
+}
+
+/**
+ * Implements hook_disable()
+ */
+function devpack_disable() {
+    module_disable(devpack());
+}
+
+function devpack() {
+    return array('views_ui', 'admin_menu', 'module_filter', 'devel');
+}
+
