@@ -23,17 +23,17 @@ function devpack_install() {
  * Implements hook_enable()
  */
 function devpack_enable() {
-    module_enable(devpack());
+    module_enable(devpack_modules());
 }
 
 /**
  * Implements hook_disable()
  */
 function devpack_disable() {
-    module_disable(devpack());
+    module_disable(devpack_modules());
 }
 
-function devpack() {
+function devpack_modules() {
     return array('views_ui', 'admin_menu', 'module_filter', 'devel');
 }
 
